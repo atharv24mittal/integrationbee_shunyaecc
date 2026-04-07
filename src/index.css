@@ -1,0 +1,300 @@
+/* 🔥 GLOBAL */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #020617, #0f172a);
+  color: white;
+}
+
+/* 🔥 HEADINGS */
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+/* 🔥 CONTAINER */
+.container {
+  padding: 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* 🔥 GROUP */
+.group {
+  margin-bottom: 30px;
+}
+
+/* 🔄 LAST UPDATE */
+.update-time {
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 15px;
+}
+
+/* 🔴 LIVE BANNER */
+.live-banner {
+  background: linear-gradient(90deg, red, crimson);
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+
+/* ⏱ COUNTDOWN */
+.countdown {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #38bdf8;
+}
+
+/* 🏆 QUALIFIERS */
+.qualifiers {
+  background: #020617;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 🔥 MATCH CARD */
+.card {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  padding: 15px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* 🔴 LIVE MATCH CARD */
+.card.live {
+  border: 2px solid red;
+  box-shadow: 0 0 25px red;
+  animation: pulse 1s infinite;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+/* 🔝 TOP BAR */
+.top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ⚔ TEAMS */
+.teams {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+
+/* VS TEXT */
+.vs {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* 🔻 BOTTOM */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+/* 🏆 RESULT */
+.result {
+  font-weight: bold;
+}
+
+/* 🟢 WINNER */
+.winner {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+/* ✨ GLOW EFFECT */
+.glow {
+  text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+}
+
+/* ========================= */
+/* ⚙ ADMIN PANEL */
+/* ========================= */
+
+.admin-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.section {
+  margin-bottom: 15px;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 5px;
+  border: none;
+  outline: none;
+}
+
+/* BUTTON */
+.update-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.update-btn:hover {
+  transform: scale(1.05);
+}
+
+.update-btn:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* ========================= */
+/* 🌳 BRACKET UI */
+/* ========================= */
+
+.bracket-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.bracket {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ROUND BOX */
+.round {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* MATCH BLOCK */
+.match {
+  margin: 10px 0;
+  padding: 12px;
+  background: #020617;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.match:hover {
+  transform: scale(1.05);
+}
+
+/* FINAL MATCH */
+.match.final {
+  background: #334155;
+  border: 2px solid gold;
+}
+
+/* WINNER TEXT */
+.winner {
+  margin-top: 5px;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+/* CHAMPION TEXT */
+.champion {
+  font-size: 22px;
+  color: gold;
+  text-shadow: 0 0 12px gold;
+}
+
+/* 🏆 CHAMPION BOX */
+.champion-box {
+  margin-top: 25px;
+  padding: 25px;
+  background: linear-gradient(135deg, gold, orange);
+  color: black;
+  font-size: 22px;
+  border-radius: 14px;
+  animation: pop 0.8s ease;
+  box-shadow: 0 0 40px gold;
+}
+
+/* 🎉 ANIMATIONS */
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* ========================= */
+/* 📱 MOBILE OPTIMIZATION */
+/* ========================= */
+
+@media (max-width: 600px) {
+  .teams {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .qualifiers {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .bracket {
+    gap: 15px;
+  }
+
+  .champion-box {
+    font-size: 18px;
+    padding: 15px;
+  }
+}
