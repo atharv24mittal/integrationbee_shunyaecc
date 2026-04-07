@@ -5,26 +5,47 @@ export default function Home() {
   const [matches, setMatches] = useState([]);
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [loading, setLoading] = useState(true);
 
   const API =
     "https://script.google.com/macros/s/AKfycbxDD8G3NiMeM6NvGkXaJ7p0V3EP4R4UtWR3rgcvStKmIxBST8ENvCwtUSTtmRFBOawX/exec";
 
+  // 🔥 FETCH DATA (WITH CACHE SAVE)
   const fetchData = async () => {
     try {
+      setLoading(true);
       const res = await axios.get(API);
+
       setMatches(res.data);
       setLastUpdate(Date.now());
+
+      // 🔥 SAVE CACHE
+      localStorage.setItem("matches_cache", JSON.stringify(res.data));
     } catch (err) {
       console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 
+  // 🔥 LOAD FROM CACHE FIRST (INSTANT LOAD)
   useEffect(() => {
+    const cached = localStorage.getItem("matches_cache");
+
+    if (cached) {
+      setMatches(JSON.parse(cached));
+      setLoading(false);
+    }
+
     fetchData();
-    const interval = setInterval(fetchData, 4000);
+
+    // 🔥 REDUCED API CALLS (10 sec)
+    const interval = setInterval(fetchData, 10000);
+
     return () => clearInterval(interval);
   }, []);
 
+  // 🔥 LIVE CLOCK
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
@@ -129,6 +150,9 @@ export default function Home() {
   return (
     <div className="container">
       <h1>🏆 Live Tournament</h1>
+
+      {/* 🔥 LOADING */}
+      {loading && <div className="loading">Loading...</div>}
 
       <p className="update-time">
         🔄 Last Updated: {new Date(lastUpdate).toLocaleTimeString()}
